@@ -128,7 +128,6 @@ class UjlSettingList extends Component {
     )
   }
 }
-export default UjlSettingList;
 
 const styles = StyleSheet.create({
   itemBox: {
@@ -227,3 +226,5 @@ UjlSettingList.Item = React.createClass({
     return null;
   },
 });
+
+export default UjlSettingList;

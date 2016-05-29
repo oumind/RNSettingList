@@ -1,12 +1,6 @@
-/**
- * Copyright 2016 UVO PLUS TECH CO., LTD.
- * The Ujl common SettingsList Component.
- * @flow
- */
-
 'use strict'
 
-import React, {Component} from 'react';
+import React from 'react';
 
 import {
   View,
@@ -17,7 +11,7 @@ import {
   Switch
 } from 'react-native';
 
-class UjlSettingList extends Component {
+class SettingsList extends React.Component {
   static propTypes = {
     backgroundColor: React.PropTypes.string,
     borderColor: React.PropTypes.string,
@@ -128,7 +122,7 @@ class UjlSettingList extends Component {
     )
   }
 }
-export default UjlSettingList;
+module.exports = SettingsList;
 
 const styles = StyleSheet.create({
   itemBox: {
@@ -151,7 +145,10 @@ const styles = StyleSheet.create({
   },
 });
 
-UjlSettingList.Header = React.createClass({
+/**
+ * Optional Header for groups
+ */
+SettingsList.Header = React.createClass({
   propTypes: {
     headerText: React.PropTypes.string,
     headerStyle: Text.propTypes.style,
@@ -164,7 +161,10 @@ UjlSettingList.Header = React.createClass({
   }
 });
 
-UjlSettingList.Item = React.createClass({
+/**
+ * Individual Items in the Settings List
+ */
+SettingsList.Item = React.createClass({
   propTypes: {
     /**
      * Title being displayed

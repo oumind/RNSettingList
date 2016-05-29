@@ -19,13 +19,16 @@ import {
 
 import UjlSettingList from './UjlSettingList';
 
-export default class Home extends Component {
+/**
+ * realistic iPhone example
+ */
+class Home extends Component {
   constructor(){
     super();
     this.onValueChange = this.onValueChange.bind(this);
     this.state = {switchValue: false};
   }
-  
+
   render() {
     return (
       <View style={{backgroundColor:'#EFEFF4',flex:1}}>
@@ -33,9 +36,9 @@ export default class Home extends Component {
           <Text style={{alignSelf:'center',marginTop:30,marginBottom:10,fontWeight:'bold',fontSize:16}}>Settings</Text>
         </View>
         <View style={{backgroundColor:'#EFEFF4',flex:1}}>
-          <SettingsList borderColor='#c8c7cc' defaultItemSize={50}>
-            <SettingsList.Header headerStyle={{marginTop:15}}/>
-            <SettingsList.Item
+          <UjlSettingList borderColor='#c8c7cc' defaultItemSize={50}>
+            <UjlSettingList.Header headerStyle={{marginTop:15}}/>
+            <UjlSettingList.Item
               icon={
                   <Image style={styles.imageStyle} source={require('./images/airplane.png')}/>
               }
@@ -46,7 +49,7 @@ export default class Home extends Component {
               title='Airplane Mode'
               titleStyle={{fontSize:16}}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/wifi.png')}/>}
               title='Wi-Fi'
               titleStyle={{fontSize:16}}
@@ -54,7 +57,7 @@ export default class Home extends Component {
               titleInfoStyle={styles.titleInfoStyle}
               onPress={() => Alert.alert('Route to Wifi Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/blutooth.png')}/>}
               title='Blutooth'
               titleStyle={{fontSize:16}}
@@ -62,13 +65,13 @@ export default class Home extends Component {
               titleInfoStyle={styles.titleInfoStyle}
               onPress={() => Alert.alert('Route to Blutooth Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/cellular.png')}/>}
               title='Cellular'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To Cellular Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/hotspot.png')}/>}
               title='Personal Hotspot'
               titleStyle={{fontSize:16}}
@@ -76,39 +79,39 @@ export default class Home extends Component {
               titleInfoStyle={styles.titleInfoStyle}
               onPress={() => Alert.alert('Route To Hotspot Page')}
             />
-            <SettingsList.Header headerStyle={{marginTop:15}}/>
-            <SettingsList.Item
+            <UjlSettingList.Header headerStyle={{marginTop:15}}/>
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/notifications.png')}/>}
               title='Notifications'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To Notifications Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/control.png')}/>}
               title='Control Center'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To Control Center Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/dnd.png')}/>}
               title='Do Not Disturb'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To Do Not Disturb Page')}
             />
-            <SettingsList.Header headerStyle={{marginTop:15}}/>
-            <SettingsList.Item
+            <UjlSettingList.Header headerStyle={{marginTop:15}}/>
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/general.png')}/>}
               title='General'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To General Page')}
             />
-            <SettingsList.Item
+            <UjlSettingList.Item
               icon={<Image style={styles.imageStyle} source={require('./images/display.png')}/>}
               title='Display & Brightness'
               titleStyle={{fontSize:16}}
               onPress={() => Alert.alert('Route To Display Page')}
             />
-          </SettingsList>
+          </UjlSettingList>
         </View>
       </View>
     );
@@ -118,7 +121,6 @@ export default class Home extends Component {
     this.setState({switchValue: value});
   }
 }
-
 const styles = StyleSheet.create({
   imageStyle:{
     marginLeft:15,
@@ -131,3 +133,5 @@ const styles = StyleSheet.create({
     color: '#8e8e93'
   }
 });
+
+export default Home;
